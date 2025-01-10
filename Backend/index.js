@@ -1,0 +1,10 @@
+const express = require("express")
+const app = express()
+const dotenv = require("dotenv")
+const cors = require("cors")
+const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
+
+app.use(cors())
+app.ise(bodyParser.json())
+dotenv.config()
