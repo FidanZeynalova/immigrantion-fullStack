@@ -7,6 +7,11 @@ export const imigrantApi = createApi({
     getImigrants: builder.query({
       query: () => `imigrantion`,
     }),
+    addImigrand:builder.mutation({
+        query:(newImigrant) => ({
+            
+        })
+    })
   }),
 })
 
