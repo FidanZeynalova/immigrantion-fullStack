@@ -1,3 +1,4 @@
+import Add from "../pages/Add";
 import Root from "../pages/Root";
 import Detail from "../pages/detail/Detail";
 import Main from "../pages/main/Main";
@@ -16,6 +17,10 @@ export const ROUTES = [
             {
                 path: '/id',
                 element: <Detail />
+            },
+            {
+                path: '/add',
+                element: <Add />
             }
         ]
     }

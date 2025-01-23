@@ -42,18 +42,18 @@ app.get("/imigrantion", async (req, res) => {
 app.get("/imigrantion/:id", async (req, res) => {
     let { id } = req.params
     let imigrant = await ImmigirationModel.findById(id)
-    res.send({ data: imigrant })
+    res.send(imigrant)
 })
 // Post Atmag
 app.post("/imigrantion", async (req, res) => {
     let newImigrant = ImmigirationModel(req.body)
     await newImigrant.save()
-    res.send({ data: newImigrant })
+    res.send({ data: req.body })
 })
 
 // Delete
 app.delete("/imigrantion/:id", async (req, res) => {
-    let {id} = req.params
+    let { id } = req.params
     await ImmigirationModel.findByIdAndDelete(id)
     res.send({
         message: "Succes Delete"
@@ -64,6 +64,7 @@ mongoose.connect(process.env.ConnectionUrl)
     .then(() => {
         console.log("Succes Connected");
     })
+    .catch((err) => console.log(err))
 app.listen(process.env.ConnectionPort, () => {
     console.log("5050 Success Port");
 })

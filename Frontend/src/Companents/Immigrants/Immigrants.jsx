@@ -42,7 +42,7 @@ function Immigrants() {
               ))
             
            )
-          }
+          } 
         </div>
       </div>
     </div>

@@ -7,7 +7,27 @@ export const imigrantApi = createApi({
     getImigrants: builder.query({
       query: () => `imigrantion`,
     }),
+    getImigrant: builder.query({
+      query: (id) => `imigrantion/${id}`,
+    }),
+    postImigrant: builder.mutation({
+      query: (newData) => ({
+        url: `imigrantion`,
+        body: newData,
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      })
+    }),
+    deleteData: builder.mutation({
+      query: (id) => ({
+        url: `imigrantion/${id}`,
+        method: "DELETE"
+      })
+    })
   }),
 })
 
-export const { useGetImigrantsQuery } = imigrantApi
+export const { useGetImigrantsQuery,useGetImigrantQuery,usePostImigrantMutation,useDeleteDataMutation } = imigrantApi
